@@ -49,6 +49,7 @@
     min-width: 100%;
     width: calc(100vw - 70px);
     overflow-x: scroll;
+    overflow-y: hidden;
     &::-webkit-scrollbar {
       display: none;
     }

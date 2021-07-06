@@ -22,7 +22,6 @@ export default function Home() {
       <MediaRow title="Action" type="small-h" />
       <MediaRow title="Horror" type="small-v" />
       <MediaRow title="Sci-fi" type="small-h" />
-
     </MainLayout>
   )
 }

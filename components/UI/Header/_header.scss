@@ -1,5 +1,5 @@
-.top-header{
-  background: rgba(0,0,0,0);
+.top-header {
+  background: rgba(0, 0, 0, 0);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -10,29 +10,40 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  transition: background .3s ease-in-out;
-  &:hover{
-    background: rgba(0,0,0,1);
+  transition: background 0.3s ease-in-out;
+  &--menu-open {
+    background-color: black;
   }
-  &__logo{
+  &:hover {
+    background: rgba(0, 0, 0, 1);
+  }
+  &__logo {
     background-size: 100% 100%;
+    cursor: pointer;
     height: 22px;
     width: 129px;
     background-image: url(/img/logo.svg);
-    transform: scale(.9);
+    transform: scale(0.9);
   }
-  &__left-side{
+  &__left-side {
     display: flex;
-    div:nth-child(1){
+    div:nth-child(1) {
       margin-right: 40px;
     }
   }
-  &__account{
+  &__menu-btn {
+    cursor: pointer;
+  }
+  &__search-btn {
+    cursor: pointer;
+  }
+  &__account {
     display: flex;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
   }
-  &__user-img{
+  &__user-img {
     width: 30px;
     height: 30px;
     border-radius: 50%;

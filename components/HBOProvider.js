@@ -12,12 +12,26 @@ export function HBOProvider({children}){
     const createUserAction = (e) => {
         setUser(e.target.value)
     }
+
+    // side navigation modal
+    const [sideNavOpen, setSideNavOpenAction] = useState(false)
+    // account modal
+    const [accountModalOpen, setAccountModalOpenAction] = useState(false)
+    // search modal
+    const [searchOpen, setSearchOpenAction] = useState(false)
+
     return (
         <StateContext.Provider
         value={{
             user,
             createUserAction,
-            defaultUserImg
+            defaultUserImg,
+            sideNavOpen,
+            setSideNavOpenAction,
+            accountModalOpen,
+            setAccountModalOpenAction,
+            searchOpen,
+            setSearchOpenAction,
         }}>
             {children}
         </StateContext.Provider>

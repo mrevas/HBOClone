@@ -1,4 +1,4 @@
-
+import Iframe from 'react-iframe'
 
 const FeaturedMedia = (props) => {
   return(
@@ -7,9 +7,9 @@ const FeaturedMedia = (props) => {
         className="featured-media__video"
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&loop=1&start=16"
+        src="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&mute=1&loop=1&start=16&controls=0&disablekb&playlist=NYH2sLid0Zc"
         allow="accelerometer; autoplay; clipboard-write;encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen />
+        />
 
       <div className="featured-media__bg">
         <div className="featured-media__container">

@@ -8,27 +8,28 @@
   padding: 20px 0 20px 50px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
   z-index: 13;
-  
-  &--active{
+
+  &--active {
     visibility: visible;
     opacity: 1;
   }
-  &__input-group{
+  &__input-group {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
   }
-  &__input{
+  &__input {
+    color: white;
     background: transparent;
     font-size: 4rem;
     border: none;
-    border-bottom: 2px solid rgb(132,0,255);
+    border-bottom: 2px solid rgb(132, 0, 255);
     outline: none;
   }
-  &__close-btn{
+  &__close-btn {
     position: absolute;
     top: 0;
     right: 0;
@@ -37,7 +38,7 @@
     // background: red;
     cursor: pointer;
   }
-  &__title{
+  &__title {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
@@ -85,26 +86,26 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity .4s ease-in-out;
-    &:hover{
-      opacity: .9;
+    transition: opacity 0.4s ease-in-out;
+    &:hover {
+      opacity: 0.9;
       cursor: pointer;
-      .fa-play{
-        transform: translate3d(0,0,0);
+      .fa-play {
+        transform: translate3d(0, 0, 0);
         opacity: 1;
       }
     }
-    .fa-play{
+    .fa-play {
       color: white;
       font-size: 4rem;
-      transform: translate3d(0,100px,0);
+      transform: translate3d(0, 100px, 0);
       opacity: 0;
-      transition: all .3s ease-in-out .2s;
+      transition: all 0.3s ease-in-out 0.2s;
     }
   }
 
-  @for $i from 0 through 20{
-    &--active &__thumbnail:nth-child(#{$i + 1}){
+  @for $i from 0 through 20 {
+    &--active &__thumbnail:nth-child(#{$i + 1}) {
       opacity: 1;
       transition-delay: 0.15s * $i;
     }

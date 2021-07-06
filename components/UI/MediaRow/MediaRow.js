@@ -1,7 +1,20 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const MediaRow = (props) => {
-  const [loadingData, setLoadingData] = useState(true)
+  const [loadingData, setLoadingData] = useState(true);
+  const [movies, setMoviesData] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://api.themoviedb.org/3/discover/movie?with_genres=28&primary_release_year=2021&api_key=d0c1682a8a39232c2e4c32225165dc0d&language=en-US')
+    .then((res) => {
+      setMoviesData(res.data.results);
+      setLoadingData(false);
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+  }, [])
 
   const loopComp = (comp, digit) => {
     let thumbnails = [];
@@ -13,10 +26,11 @@ const MediaRow = (props) => {
   }
 
   const showThumbnails = () => {
-    setTimeout(() => setLoadingData(false), 3000);
     return loadingData 
     ? loopComp((<Skeleton />), 10)
-    : loopComp((<Thumbnail />), 10);
+    : movies.map((movie) => {
+      return <Thumbnail movieData={movie} />
+    });
   }
 
   return(
@@ -26,19 +40,19 @@ const MediaRow = (props) => {
         
         {showThumbnails()}
 
-          {loopComp(
+          {/* {loopComp(
             (<Thumbnail />), 10
             
-            )}
+            )} */}
       </div>
     </div>
   )
 }
 
-const Thumbnail = () => {
+const Thumbnail = (props) => {
   return (
     <div className="media-row__thumbnail">
-      <img src="https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/88997/93196/Avengers-Endgame-Final-Style-Poster-buy-original-movie-posters-at-starstills__42370.1563973516.jpg?c=2?imbypass=on" />
+      <img src={`https://image.tmdb.org/t/p/original${props.movieData.poster_path}`} />
       <div className="media-row__top-layer">
         <i className="fas fa-play"/>  
       </div>  

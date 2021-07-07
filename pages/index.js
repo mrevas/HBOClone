@@ -17,11 +17,16 @@ export default function Home() {
   return AuthCheck(
     <MainLayout>
       <FeaturedMedia />
-      <MediaRow title="Movies" type="large-h" />
-      <MediaRow title="Series" type="large-v" />
-      <MediaRow title="Action" type="small-h" />
-      <MediaRow title="Horror" type="small-v" />
-      <MediaRow title="Sci-fi" type="small-h" />
+      <MediaRow title="Movies" endpoint="discover/movie?primary_release_year=2021" type="large-v" />
+      <MediaRow title="TV Shows" endpoint="discover/tv?" type="small-v" />
+      <MediaRow title="Action" endpoint="discover/movie?with_genres=28" type="small-v" />
+      <MediaRow title="Horror" endpoint="discover/movie?with_genres=27" type="small-v" />
+      <MediaRow title="Sci-fi" endpoint="discover/movie?with_genres=878" type="small-v" />
+      <MediaRow title="Mystery" endpoint="discover/movie?with_genres=9648" type="small-v" />
+      <MediaRow title="Thriller" endpoint="discover/movie?with_genres=53" type="small-v" />
+      <MediaRow title="Western" endpoint="discover/movie?with_genres=37" type="small-v" />
+      <MediaRow title="Comedy" endpoint="discover/movie?with_genres=35" type="small-v" />
+      <MediaRow title="Family" endpoint="discover/movie?with_genres=10751" type="small-v" />
     </MainLayout>
   )
 }

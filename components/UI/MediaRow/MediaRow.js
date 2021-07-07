@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {shuffleArray} from "../../utilities"
 import axios from "axios";
 
 const MediaRow = (props) => {
@@ -6,9 +7,9 @@ const MediaRow = (props) => {
   const [movies, setMoviesData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.themoviedb.org/3/discover/movie?with_genres=28&primary_release_year=2021&api_key=d0c1682a8a39232c2e4c32225165dc0d&language=en-US')
+    axios.get(`https://api.themoviedb.org/3/${props.endpoint}&api_key=d0c1682a8a39232c2e4c32225165dc0d&language=en-US`)
     .then((res) => {
-      setMoviesData(res.data.results);
+      setMoviesData(shuffleArray(res.data.results));
       setLoadingData(false);
     })
     .catch((error) => {

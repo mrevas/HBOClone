@@ -26,11 +26,11 @@ const MediaRow = (props) => {
     return thumbnails;
   }
 
-  const showThumbnails = () => {
+  const showThumbnails = (type) => {
     return loadingData 
     ? loopComp((<Skeleton />), 10)
     : movies.map((movie) => {
-      return <Thumbnail movieData={movie} />
+      return <Thumbnail movieData={movie} type={type} />
     });
   }
 
@@ -39,7 +39,7 @@ const MediaRow = (props) => {
       <h3 className="media-row__title">{props.title}</h3>
       <div className="media-row__thumbnails">
         
-        {showThumbnails()}
+        {showThumbnails(props.type)}
 
           {/* {loopComp(
             (<Thumbnail />), 10
@@ -51,6 +51,21 @@ const MediaRow = (props) => {
 }
 
 const Thumbnail = (props) => {
+  const thumbSize = (type) => {
+
+    if (type === 'large-v') {
+      return '400';
+    }
+    if (type === 'small-v') {
+      return '185'
+    }
+    if (type === 'large-h') {
+      return '500';
+    }
+    if (type === 'small-h') {
+      return '342';
+    }
+  }
   return (
     <div className="media-row__thumbnail">
       <img src={`https://image.tmdb.org/t/p/original${props.movieData.poster_path}`} />

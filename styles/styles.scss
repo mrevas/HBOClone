@@ -8,6 +8,7 @@
 @use '../components/UI/Account/Account';
 @use '../components/UI/SearchModal/SearchModal';
 @use '../components/UI/MediaRow/MediaRow';
+@use '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 h1 {
   font-size: 3rem;

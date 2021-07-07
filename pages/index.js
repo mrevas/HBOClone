@@ -34,8 +34,8 @@ export default function Home() {
       <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Sci-fi"/>}>
         <MediaRow title="Sci-fi" endpoint="discover/movie?with_genres=878" type="small-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="large-v" title="Mystery"/>}>
-        <MediaRow title="Mystery" endpoint="discover/movie?with_genres=9648" type="large-v" />
+      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Mystery"/>}>
+        <MediaRow title="Mystery" endpoint="discover/movie?with_genres=9648" type="small-v" />
       </LazyLoad>
       <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Thriller"/>}>
         <MediaRow title="Thriller" endpoint="discover/movie?with_genres=53" type="small-v" />

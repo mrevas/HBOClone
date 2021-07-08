@@ -10,6 +10,11 @@
     z-index: 1;
     transform: scale(1.5);
   }
+  &__movie {
+    top: 40px;
+    position: relative;
+    z-index: 5;
+  }
   &__bg {
     background: linear-gradient(
       180deg,

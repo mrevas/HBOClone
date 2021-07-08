@@ -18,7 +18,15 @@ export default function Home() {
   useEffect( () => {}, []);
   return AuthCheck(
     <MainLayout>
-      <FeaturedMedia />
+      <FeaturedMedia
+				mediaUrl="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&loop=1&start=16&loop=1&mute=1&playlist=NYH2sLid0Zc&"
+				title="Mortal Kombat"
+				location="In theaters and on HBO MAX. Streaming throughout May 23."
+				linkUrl="/movie/460465"
+				type="front"
+				mediaType={'movie'}
+				mediaId={460465}
+			/>
       <LazyLoad offset={-400} placeholder={<Placeholder type="large-v" title="Movies"/>}>
         <MediaRow title="Movies" endpoint="discover/movie?primary_release_year=2021" type="large-v" />
       </LazyLoad>

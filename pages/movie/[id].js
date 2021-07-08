@@ -14,10 +14,10 @@ export default function SingleMediaPage(props) {
     const [mediaData, setMediaData] = useState(false)
 
     useEffect(() => {
-        axios.get(` https://api.themoviedb.org/3/movie/${props.query.id}?api_key=d0c1682a8a39232c2e4c32225165dc0d&language=en-US`)
+        axios.get(`https://api.themoviedb.org/3/movie/${props.query.id}?api_key=d0c1682a8a39232c2e4c32225165dc0d&language=en-US`)
         .then((res) => {
             setMediaData(res.data)
-            console.log(res)
+            console.log(res.data)
         })
         .catch((error) => {
           console.error(error);
@@ -27,8 +27,13 @@ export default function SingleMediaPage(props) {
 
   return AuthCheck(
     <MainLayout>
-      <FeaturedMedia id={mediaData.id} title={mediaData.title} />
-      <MediaRow title="More Like This" type="small-h" />
+      <FeaturedMedia 
+        type="single" 
+        title={mediaData.title} 
+        mediaUrl={`https://www.2embed.ru/embed/tmdb/movie?id=${mediaData.id}`}
+        linkUrl="/movies/id"
+      />
+      {/* <MediaRow title="More Like This" type="small-h" /> */}
       <CastInfo />
     </MainLayout>
   )

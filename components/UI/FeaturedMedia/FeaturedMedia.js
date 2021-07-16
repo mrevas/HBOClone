@@ -18,7 +18,7 @@ const FeaturedMedia = (props) => {
         allow="accelerometer; autoplay; clipboard-write;encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen   
       />)
-    } else {
+    } else if (props.page !== 'mediaType') {
       return (
       <iframe 
         className="featured-media__movie"
@@ -28,11 +28,15 @@ const FeaturedMedia = (props) => {
         sandbox="allow-scripts allow-same-origin"
         allowFullScreen   
       />)
+    } else if (props.page === 'mediaType') {
+      return (
+        <img src={props.mediaUrl} className="featured-media__img" />
+      )
     }
   }
 
   return(
-    <div className="featured-media">
+    <div className={`featured-media ${props.page === 'mediaType'? 'featured-media--media-type' : ''}`}>
       {showMedia()}
       <div className="featured-media__bg">
         <div className="featured-media__container">
@@ -43,7 +47,6 @@ const FeaturedMedia = (props) => {
             <div className="featured-media__play-btn">
               <i className="fas fa-play"/>
             </div>
-            <div className="featured-media__info-btn">MORE INFO</div>
           </div>
         </div>
       </div>

@@ -27,36 +27,50 @@ export default function Home() {
 				mediaType={'movie'}
 				mediaId={460465}
 			/>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="large-v" title="Movies"/>}>
-        <MediaRow title="Movies" endpoint="discover/movie?primary_release_year=2021" type="large-v" />
+      <LazyLoad offset={-200} placeholder={<Placeholder type="large-v" title="Movies"/>}>
+        <MediaRow title="Movies" endpoint="discover/movie?" type="large-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="large-v" title="TV Shows"/>}>
-        <MediaRow title="TV Shows" endpoint="discover/tv?" type="large-v" />
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="large-v" title="TV Shows"/>}>
+        <MediaRow title="TV Shows" mediaType="tv" endpoint="discover/tv?" type="large-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Action"/>}>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="Action"/>}>
         <MediaRow title="Action" endpoint="discover/movie?with_genres=28" type="small-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Horror"/>}>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="Horror"/>}>
         <MediaRow title="Horror" endpoint="discover/movie?with_genres=27" type="small-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Sci-fi"/>}>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="Sci-fi"/>}>
         <MediaRow title="Sci-fi" endpoint="discover/movie?with_genres=878" type="small-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Mystery"/>}>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="Mystery"/>}>
         <MediaRow title="Mystery" endpoint="discover/movie?with_genres=9648" type="small-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Thriller"/>}>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="Thriller"/>}>
         <MediaRow title="Thriller" endpoint="discover/movie?with_genres=53" type="small-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Western"/>}>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="Western"/>}>
         <MediaRow title="Western" endpoint="discover/movie?with_genres=37" type="small-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Comedy"/>}>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="Comedy"/>}>
         <MediaRow title="Comedy" endpoint="discover/movie?with_genres=35" type="small-v" />
       </LazyLoad>
-      <LazyLoad offset={-400} placeholder={<Placeholder type="small-v" title="Family"/>}>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="Family"/>}>
         <MediaRow title="Family" endpoint="discover/movie?with_genres=10751" type="small-v" />
       </LazyLoad>
+
+      <LazyLoad offset={-200} placeholder={<Placeholder type="small-v" title="History"/>}>
+        <MediaRow title="History" endpoint="discover/movie?with_genres=36" type="small-v" />
+      </LazyLoad>
+
     </MainLayout>
   )
 }

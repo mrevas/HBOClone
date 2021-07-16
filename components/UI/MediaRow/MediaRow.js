@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {shuffleArray} from "../../utilities"
 import axios from "axios";
 import Link from 'next/link'
+import { v4 as uuidv4 } from "uuid";
 
 const MediaRow = (props) => {
   const [loadingData, setLoadingData] = useState(true);
@@ -16,14 +17,10 @@ const MediaRow = (props) => {
     .catch((error) => {
       console.error(error);
     })
-  }, [])
+  }, [props.endpoint])
 
   const loopComp = (comp, digit) => {
-    let thumbnails = [];
-    for(let index = 1; index <= digit; index++) {
-      thumbnails.push(comp)
-    }
-
+    let thumbnails = [<Skeleton key={uuidv4()}  />,<Skeleton key={uuidv4()} />,<Skeleton key={uuidv4()} />,<Skeleton key={uuidv4()} />,<Skeleton key={uuidv4()} />];
     return thumbnails;
   }
 
@@ -31,7 +28,7 @@ const MediaRow = (props) => {
     return loadingData 
     ? loopComp((<Skeleton />), 10)
     : movies.map((movie) => {
-      return <Thumbnail movieData={movie} type={type} />
+      return <Thumbnail key={uuidv4()} movieData={movie} type={type} mediaType={props.mediaType} />
     });
   }
 
@@ -39,13 +36,7 @@ const MediaRow = (props) => {
     <div className={`media-row ${props.type}`}>
       <h3 className="media-row__title">{props.title}</h3>
       <div className="media-row__thumbnails">
-        
         {showThumbnails(props.type)}
-
-          {/* {loopComp(
-            (<Thumbnail />), 10
-            
-            )} */}
       </div>
     </div>
   )
@@ -68,7 +59,7 @@ const Thumbnail = (props) => {
     }
   }
   return (
-    <Link href={`movie/${props.movieData.id}`}>
+    <Link href={`/${props.mediaType === 'tv' ? 'tv' : 'movie'}/${props.movieData.id}`}>
       <div className="media-row__thumbnail">
         <img src={`https://image.tmdb.org/t/p/original${props.movieData.poster_path}`} />
         <div className="media-row__top-layer">

@@ -29,6 +29,8 @@ export default function SingleMediaPage(props) {
   return AuthCheck(
     <MainLayout>
       <FeaturedMedia 
+        mediaType={props.query.mediaType}
+        mediaId={props.query.id}
         type="single" 
         title={props.query.mediaType === 'movie' ? props.mediaData.title : props.mediaData.name} 
         mediaUrl={`https://www.2embed.ru/embed/tmdb/${props.query.mediaType}?id=${props.mediaData.id}${props.query.mediaType === 'tv' ? '&s=1&e=1': ''}`}

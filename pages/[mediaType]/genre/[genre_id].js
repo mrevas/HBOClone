@@ -35,7 +35,6 @@ export default function GenrePage(props) {
               endpoint={`discover/${props.query.mediaType}?with_genres=${props.query.genre_id}&page=${index + 1}`} 
               type={thumbType} />
         </LazyLoad>
-
       )
     })
   }
@@ -46,10 +45,9 @@ export default function GenrePage(props) {
 				mediaUrl={`https://image.tmdb.org/t/p/original${props.featuredData.backdrop_path}`}
 				title={props.query.mediaType === 'movie'? props.featuredData.title : props.featuredData.name}
 				linkUrl={`/${props.query.mediaType}/${props.featuredData.id}`}
-				// type="front"
         page="mediaType"
 				mediaType={`${props.query.mediaType}`}
-				mediaId={460465}
+				mediaId={props.featuredData.id}
 			/>
       <GenreNav mediaType={props.query.mediaType} genresData={props.genresData} />
       {showRandomMedia()}

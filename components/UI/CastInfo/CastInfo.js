@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 
 const CastInfo = (props) => {
@@ -20,9 +19,9 @@ const CastInfo = (props) => {
 
    const showCast = () => {
     if (loadingData === false) {
-    return credits.cast.map((cast) => {
+    return credits.cast.map((cast, index) => {
       return (
-        <ul key={uuidv4()} className="cast-info__crew">
+        <ul key={index} className="cast-info__crew">
           <li>
             {cast.character}
           </li>
@@ -36,9 +35,9 @@ const CastInfo = (props) => {
 
   const showCrew = () => {
     if (loadingData === false) {
-    return credits.crew.map((crew) => {
+    return credits.crew.map((crew, index) => {
       return (
-        <ul className="cast-info__crew">
+        <ul className="cast-info__crew" key={index}>
           <li>
             {crew.name}
           </li>

@@ -1,10 +1,17 @@
 import { useRouter } from "next/router"
+import { useStateContext } from "../../HBOProvider";
 
 
 const FeaturedMedia = (props) => {
   const router = useRouter();
+  const globalState = useStateContext()
+
   const clickedPlay = () => {
     router.push(props.linkUrl)
+  }
+  
+  const clickedAdd = (props) => {
+    globalState.addToList({mediaId: props.mediaId, mediaType: props.mediaType, mediaUrl: props.mediaUrl})
   }
 
   const showMedia = () => {
@@ -43,11 +50,20 @@ const FeaturedMedia = (props) => {
           <div className="featured-media__title">{props.title}</div>
           <div className="featured-media__playing">NOW PLAYING</div>
           <div className="featured-media__location">In theaters and on HBO MAX.</div>
-          <div className="featured-media__buttons" onClick={() => clickedPlay()}>
-            <div className="featured-media__play-btn">
+
+          <div className="featured-media__buttons">
+            <div className="featured-media__play-btn" onClick={clickedPlay}>
               <i className="fas fa-play"/>
             </div>
+            
+            <div className="featured-media__add-btn" onClick={() => {
+              clickedAdd(props)
+            }}>
+              <i className="fas fa-plus"/>
+            </div>
           </div>
+
+
         </div>
       </div>
     </div>

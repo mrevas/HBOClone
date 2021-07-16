@@ -19,7 +19,6 @@ const Login = () => {
   }, [])
 
   const selectUser = (id) => {
-    console.log(id)
     ls('activeUID', id)
     router.push('/')
   }

@@ -17,7 +17,7 @@ const MediaRow = (props) => {
     .catch((error) => {
       console.error(error);
     })
-  }, [props.endpoint])
+  }, [props.query])
 
   const loopComp = (comp, digit) => {
     let thumbnails = [<Skeleton key={uuidv4()}  />,<Skeleton key={uuidv4()} />,<Skeleton key={uuidv4()} />,<Skeleton key={uuidv4()} />,<Skeleton key={uuidv4()} />];

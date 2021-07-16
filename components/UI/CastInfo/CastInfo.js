@@ -16,7 +16,7 @@ const CastInfo = (props) => {
     .catch((error) => {
       console.error(error);
     })
-  }, [])
+  }, [props.query])
 
    const showCast = () => {
     if (loadingData === false) {

@@ -20,10 +20,8 @@ const GenreList = (props) => {
 
 		return (
 			<li key={genre.id}>
-				<Link href="/">
-					<a>
+				<Link href={`/${props.mediaType}/genre/${genre.id}`}>
 						{genre.name}
-					</a>
 				</Link>
 			</li>
 		)

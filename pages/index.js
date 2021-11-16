@@ -7,7 +7,6 @@ import LazyLoad from 'react-lazyload';
 import MainLayout from '../components/Layouts/MainLayout'
 import FeaturedMedia from '../components/UI/FeaturedMedia/FeaturedMedia'
 import MediaRow from '../components/UI/MediaRow/MediaRow'
-import AuthCheck from '../components/AuthCheck';
 import { useStateContext } from '../components/HBOProvider'
 import Placeholder from '../components/UI/Placeholder/Placeholder';
 
@@ -16,7 +15,7 @@ export default function Home() {
   const router = useRouter()
 
   useEffect( () => {}, []);
-  return AuthCheck(
+  return (
     <MainLayout>
       <FeaturedMedia
 				mediaUrl="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&loop=1&start=16&loop=1&mute=1&playlist=NYH2sLid0Zc&"

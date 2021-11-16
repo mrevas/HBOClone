@@ -10,7 +10,6 @@ import MainLayout from '../../../components/Layouts/MainLayout'
 import GenreNav from '../../../components/UI/GenreNav/GenreNav';
 import FeaturedMedia from '../../../components/UI/FeaturedMedia/FeaturedMedia'
 import MediaRow from '../../../components/UI/MediaRow/MediaRow'
-import AuthCheck from '../../../components/AuthCheck';
 import { useStateContext } from '../../../components/HBOProvider'
 import Placeholder from '../../../components/UI/Placeholder/Placeholder';
 import { shuffleArray } from '../../../components/utilities';
@@ -39,7 +38,7 @@ export default function GenrePage(props) {
     })
   }
 
-  return AuthCheck(
+  return (
     <MainLayout>
       <FeaturedMedia
 				mediaUrl={`https://image.tmdb.org/t/p/original${props.featuredData.backdrop_path}`}

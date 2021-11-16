@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import AuthCheck from '../../components/AuthCheck'
 import MainLayout from '../../components/Layouts/MainLayout'
 import CastInfo from '../../components/UI/CastInfo/CastInfo'
 import FeaturedMedia from '../../components/UI/FeaturedMedia/FeaturedMedia'
@@ -26,7 +24,7 @@ export default function SingleMediaPage(props) {
     //   }, [mediaData])
 
 
-  return AuthCheck(
+  return (
     <MainLayout>
       <FeaturedMedia 
         mediaType={props.query.mediaType}

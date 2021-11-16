@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { useStateContext } from '../../../components/HBOProvider'
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';

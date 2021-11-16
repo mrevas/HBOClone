@@ -51,7 +51,7 @@ const Account = (props) => {
       <div className="account__details">
         <div className="account__title">My List</div>
         <div className="account__watch-list">
-          {globalState.watchList !== null ? showWatchList() : ''}
+          {globalState.watchList !== null ? showWatchList() : ``}
         </div>
       </div>
       <div className="account__menu">

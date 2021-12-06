@@ -32,7 +32,6 @@ const FeaturedMedia = (props) => {
         width="100%"
         height="100%"
         src={props.mediaUrl}
-        sandbox="allow-scripts allow-same-origin"
         allowFullScreen   
       />)
     } else if (props.page === 'mediaType') {
